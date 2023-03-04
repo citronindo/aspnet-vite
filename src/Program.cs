@@ -1,4 +1,4 @@
-using aspnet.vite.apps;
+using aspnet.vite.reactjs;
 
 var builder = WebApplication.CreateBuilder(args);
 var startup = new Startup(builder.Configuration);

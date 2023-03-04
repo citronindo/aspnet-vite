@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
-namespace aspnet.vite.apps;
+namespace aspnet.vite.reactjs;
 public class Startup
 {
     public IConfiguration Configuration { get; }
