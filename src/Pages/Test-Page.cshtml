@@ -1,0 +1,21 @@
+@page
+@{
+  ViewData["Title"] = "Test";
+}
+@section PageStyles {
+<environment exclude="Development">
+    <link rel="stylesheet" href="~/dist/css/app.dist.css" asp-append-version="true" />
+</environment>
+}
+@section PageScripts{
+<environment include="Development">
+    <script type="module" src="~/dist/clients/apps/pages/test-page.jsx"></script>
+</environment>
+<environment exclude="Development">
+    <script type="module" src="~/dist/js/pages/test-page.dist.js"></script>
+</environment>
+}
+
+<div id="root"></div>
+<button id="btnOutside" class="btn btn-dark">Click From Outside</button>
+<div id="greet"></div>

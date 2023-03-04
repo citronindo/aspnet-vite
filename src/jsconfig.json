@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+          "@apps/*": ["./clients/apps/*"],
+          "@libs/*": ["./clients/libs/*"],
+          "@assets/*": ["./clients/assets/*"],
+          "@scss/*": ["./clients/assets/scss/*"],
+          "@img/*": ["./clients/assets/img/*"]
+        }
+    },
+    "include": ["clients/**/*"],
+    "exclude": ["node_modules", "wwwroot", "Pages"]
+}

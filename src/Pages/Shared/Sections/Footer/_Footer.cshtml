@@ -1,0 +1,13 @@
+@{
+  ViewData["containerNav"] = (ViewData["containerNav"] ??= "container-fluid");
+}
+
+<footer class="content-footer footer bg-footer-theme">
+  <div class='@ViewData["containerNav"]'>
+    <div class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">
+      <div>
+        ©2023, made with ❤️ by <a href='@ViewData["authorUrl"]' target="_blank" class="fw-semibold">@ViewData["authorName"]</a>
+      </div>
+    </div>
+  </div>
+</footer>

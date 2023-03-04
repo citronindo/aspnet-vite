@@ -1,0 +1,23 @@
+﻿@page
+@{
+    ViewData["Title"] = "Vite + React + Dotnet Core";
+}
+
+@section PageStyles {
+<environment exclude="Development">
+    <link rel="stylesheet" href="~/dist/css/page-index.dist.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/app.dist.css" asp-append-version="true" />
+</environment>
+}
+
+@section PageScripts{
+<environment include="Development">
+    <script type="module" src="~/dist/clients/apps/pages/page-index.jsx"></script>
+</environment>
+<environment exclude="Development">
+    <script type="module" src="~/dist/js/pages/index.dist.js"></script>
+</environment>
+}
+
+<div id="root"></div>
+
