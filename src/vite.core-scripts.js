@@ -21,9 +21,9 @@ export default defineConfig({
     },
     build: {
         outDir: './wwwroot/dist',
-        emptyOutDir: true,
+        emptyOutDir: false,
         manifest: false,
-        minify: false,
+        minify: true,
         external: ['jquery'],
         commonjsOptions: {
             requireReturnsDefault: 'auto'
@@ -36,6 +36,7 @@ export default defineConfig({
             output: {
                 chunkFileNames: 'js/[name].dist.js',
                 entryFileNames: 'js/[name].dist.js',
+                assetFileNames: 'css/libs/[name].dist.css',
                 manualChunks: (id) => {
 
                     // node modules chunks
@@ -60,6 +61,9 @@ export default defineConfig({
                     }
                     // helpers chuck
                     if(id.includes('helpers.js')) return 'libs/helpers';
+
+                    // main chuck
+                    if (id.includes('menu.js')) return 'libs/menu';
               
                     // main chuck
                     if (id.includes('main.js')) return 'main';
@@ -67,6 +71,13 @@ export default defineConfig({
                     // libs-script chuck
                     if (id.includes('libs-script.js')) return 'libs-script';
 
+                    // customizer chuck
+                    if (id.includes('template-customizer.js')) return 'libs/customizer';
+                    if (id.includes('_template-customizer.html')) return 'components/customizer';
+                    if (id.includes('config.js')) return 'utils/config';
+                    if (id.includes('customizer.scss')) return 'customizer';
+
+                    console.info(id);
                     // other script chuck
                     return "scripts";
                 },

@@ -733,7 +733,7 @@ const Helpers = {
       // If custom option element is radio, remove checked from the siblings (closest `.row`)
       if (el.type === 'radio') {
         const customRadioOptionList = [].slice.call(el.closest('.row').querySelectorAll('.custom-option'))
-        customRadioOptionList.map(function (customRadioOptionEL) {
+        customRadioOptionList.forEach(function (customRadioOptionEL) {
           customRadioOptionEL.closest('.custom-option').classList.remove('checked')
         })
       }
@@ -914,7 +914,7 @@ const Helpers = {
     const _this = this
 
     const custopOptionList = [].slice.call(document.querySelectorAll('.custom-option .form-check-input'))
-    custopOptionList.map(function (customOptionEL) {
+    custopOptionList.forEach(function (customOptionEL) {
       // Update custom options check on page load
       _this.updateCustomOptionCheck(customOptionEL)
 

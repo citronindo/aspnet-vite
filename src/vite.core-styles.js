@@ -26,8 +26,14 @@ export default defineConfig({
         minify: true,
         rollupOptions: {
             input: {
-                'core': resolve(__dirname, 'clients/assets/scss/core.scss'),
-                'theme': resolve(__dirname, 'clients/assets/scss/theme.scss'),
+                'core': resolve(__dirname, 'clients/assets/scss/vuexy/scss/core.scss'),
+                'core-dark': resolve(__dirname, 'clients/assets/scss/vuexy/scss/core-dark.scss'),
+                'theme-default': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-default.scss'),
+                'theme-default-dark': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-default-dark.scss'),
+                'theme-semi-dark': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-semi-dark.scss'),
+                'theme-semi-dark-dark': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-semi-dark-dark.scss'),
+                'theme-bordered': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-bordered.scss'),
+                'theme-bordered-dark': resolve(__dirname, 'clients/assets/scss/vuexy/scss/theme-bordered-dark.scss'),
                 'libs': resolve(__dirname, 'clients/assets/scss/libs.scss')
             },
             output: {

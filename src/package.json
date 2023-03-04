@@ -71,6 +71,7 @@
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react-app": "^7.0.1",
+    "rollup-plugin-html-string": "^1.0.1",
     "sass": "^1.58.3",
     "typescript": "^4.9.5",
     "vite": "^4.1.0",

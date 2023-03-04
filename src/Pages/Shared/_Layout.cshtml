@@ -8,13 +8,14 @@
     ViewData["isMenu"] = (ViewData["isMenu"] ??= true);
     ViewData["isFlex"] = (ViewData["isFlex"] ??= false);
     ViewData["isFooter"] = (ViewData["isFooter"] ??= true);
+    @*ViewData["customizerHidden"] = (ViewData["customizerHidden"] ??= "customizer-hide");*@
 
     @*HTML Classes *@
     ViewData["navbarDetached"] = (ViewData["navbarDetached"] ?? "navbar-detached");
     ViewData["menuFixed"] = (ViewData["menuFixed"] ?? "layout-menu-fixed");
     ViewData["navbarFixed"] = (ViewData["navbarFixed"] ?? "layout-navbar-fixed");
     ViewData["footerFixed"] = (ViewData["footerFixed"] ?? "layout-footer-fixed");
-    ViewData["menuCollapsed"] = (ViewData["menuCollapsed"] ?? "layout-menu-collapsed");
+    @*ViewData["menuCollapsed"] = (ViewData["menuCollapsed"] ?? "layout-menu-collapsed");*@
 
     @*Content classes *@
     ViewData["container"] = (ViewData["container"] ?? "container-xxl");
@@ -23,7 +24,9 @@
 <!DOCTYPE html>
 <html 
     lang="en"
-    class='light-style @ViewData["navbarFixed"] @ViewData["menuFixed"] @ViewData["menuCollapsed"] @ViewData["footerFixed"]'
+    class='light-style @ViewData["navbarFixed"] @ViewData["menuFixed"] @ViewData["menuCollapsed"] @ViewData["footerFixed"] @ViewData["customizerHidden"]'
+    data-theme="theme-default"
+    data-assets-path="/dist/"
 >
 
 <head>
@@ -44,9 +47,10 @@
     <link rel="stylesheet" href="~/assets/fonts/tabler-icons.dist.css" />
     <link rel="stylesheet" href="~/assets/fonts/flag-icons.dist.css" />
 
-    <link rel="stylesheet" href="~/dist/css/core.dist.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/dist/css/theme.dist.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/core.dist.css" class="template-customizer-core-css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/dist/css/theme.dist.css" class="template-customizer-theme-css" asp-append-version="true" />
     <link rel="stylesheet" href="~/dist/css/libs.dist.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/libs/customizer.dist.css" asp-append-version="true" />
 
     @await RenderSectionAsync("PageStyles", required: false)
 
@@ -55,8 +59,8 @@
 
     @{
         bool isMenu = ViewData["isMenu"] != null && Convert.ToBoolean(ViewData["isMenu"]);
-        bool isNavbar = @ViewData["isNavbar"] != null && Convert.ToBoolean(@ViewData["isNavbar"]);
-        bool isFooter = @ViewData["isFooter"] != null && Convert.ToBoolean(@ViewData["isFooter"]);
+        bool isNavbar = ViewData["isNavbar"] != null && Convert.ToBoolean(ViewData["isNavbar"]);
+        bool isFooter = ViewData["isFooter"] != null && Convert.ToBoolean(ViewData["isFooter"]);
     }
 
     <div class='layout-wrapper layout-content-navbar @(isMenu ? "" : "layout-without-menu")'>
@@ -117,7 +121,6 @@
         window.__vite_plugin_react_preamble_installed__ = true
     </script>
 </environment>
-
 
     @await RenderSectionAsync("PageScripts", required: false)
 </body>
