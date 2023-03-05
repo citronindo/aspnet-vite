@@ -29,7 +29,7 @@ export default defineConfig({
     build: {
         outDir: './wwwroot/dist',
         emptyOutDir: false,
-        manifest: true,
+        manifest: false,
         minify: true,
         rollupOptions: {
             input: {

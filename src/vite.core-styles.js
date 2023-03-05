@@ -37,8 +37,11 @@ export default defineConfig({
                 'libs': resolve(__dirname, 'clients/assets/scss/libs.scss')
             },
             output: {
-                assetFileNames: (props) => {
-                    if (/\.css$/.test(props.name ?? '')) {
+                assetFileNames: ({ name }) => {
+                    if (/^theme-.*\.css$/.test(name ?? '')) {
+                        return 'css/themes/[name].dist[extname]';
+                    }
+                    else if (/\.css$/.test(name ?? '')) {
                         return 'css/[name].dist[extname]';
                     }
                     return '[name].dist[extname]';

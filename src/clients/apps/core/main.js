@@ -21,7 +21,7 @@ let assetsPath = document.documentElement.getAttribute('data-assets-path'),
 
 const templateCustomizer = new TemplateCustomizer({
     cssPath: assetsPath + 'css/',
-    themesPath: assetsPath + 'css/',
+    themesPath: assetsPath + 'css/themes/',
     displayCustomizer: true,
     defaultShowDropdownOnHover: true
 });

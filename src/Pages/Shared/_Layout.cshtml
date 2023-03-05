@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["appName"] = "ASPNET-VITE";
-    ViewData["authorUrl"] = "https://speca.co.id";
-    ViewData["authorName"] = "SPECA SOLUTION";
+    ViewData["authorUrl"] = "https://citron.or.id";
+    ViewData["authorName"] = "CITRON INDONESIA";
 
     @* Display elements *@
     ViewData["isNavbar"] = (ViewData["isNavbar"] ??= true);
@@ -27,6 +27,7 @@
     class='light-style @ViewData["navbarFixed"] @ViewData["menuFixed"] @ViewData["menuCollapsed"] @ViewData["footerFixed"] @ViewData["customizerHidden"]'
     data-theme="theme-default"
     data-assets-path="/dist/"
+    data-template="aspnet-vite-reactjs-vuexy"
 >
 
 <head>
@@ -38,9 +39,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- Fonts & Flag icons -->
     <link rel="stylesheet" href="~/assets/fonts/fontawesome.dist.css" />
@@ -48,7 +47,7 @@
     <link rel="stylesheet" href="~/assets/fonts/flag-icons.dist.css" />
 
     <link rel="stylesheet" href="~/dist/css/core.dist.css" class="template-customizer-core-css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/dist/css/theme.dist.css" class="template-customizer-theme-css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/themes/theme-default.dist.css" class="template-customizer-theme-css" asp-append-version="true" />
     <link rel="stylesheet" href="~/dist/css/libs.dist.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/dist/css/libs/customizer.dist.css" asp-append-version="true" />
 

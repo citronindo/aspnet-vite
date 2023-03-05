@@ -19,7 +19,7 @@ function App(props) {
           <img src={netcoreLogo} className="logo react" alt="Dotnet core logo" />
         </a>
       </div>
-      <h1>Vite + React + Dotnet Core</h1>
+      <h1>Vite 4 + React 18 + Dotnet Core 7</h1>
 
           <div className="container">
             <div className="row">
