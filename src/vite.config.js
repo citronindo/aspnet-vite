@@ -49,7 +49,7 @@ export default defineConfig({
                     return '[name].dist[extname]';
                 },
                 manualChunks: {
-                    'libs/react': ['react', 'react-dom']
+                    'libs/react': ['react', 'react-dom'],
                 }
             }
         }

@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "echo Starting the development server && vite --host",
-    "build": "pnpm build:core && pnpm build:apps",
-    "build:apps": "vite build",
-    "build:core-scripts": "vite build -c vite.core-scripts.js",
-    "build:core-styles": "vite build -c vite.core-styles.js",
-    "build:core": "pnpm build:core-scripts && pnpm build:core-styles",
+    "build": "vite build",
+    "build:prod": "pnpm build:core && vite build",
+    "build:core": "vite build -c vite.core-scripts.js",
     "lint": "eslint --fix"
   },
   "dependencies": {

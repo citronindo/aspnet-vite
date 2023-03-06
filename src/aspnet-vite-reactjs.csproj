@@ -22,12 +22,12 @@
   </Target>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot/dist') ">
-	  <Exec Command="pnpm build" />
+	  <Exec Command="pnpm build:prod" />
   </Target>
 
   <Target Name="PublishRunVite" AfterTargets="ComputeFilesToPublish">
     <Exec Command="pnpm install" />
-    <Exec Command="pnpm build" />
+    <Exec Command="pnpm build:prod" />
   </Target>
 
 </Project>

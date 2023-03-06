@@ -24,3 +24,5 @@ window.typeahead = typeahead;
 
 import { Helpers } from '@apps/utils/helpers';
 window.Helpers = Helpers;
+
+import './libs-style';

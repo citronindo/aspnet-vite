@@ -21,7 +21,7 @@ export default defineConfig({
     },
     build: {
         outDir: './wwwroot/dist',
-        emptyOutDir: false,
+        emptyOutDir: true,
         manifest: false,
         minify: true,
         external: ['jquery'],
@@ -36,7 +36,15 @@ export default defineConfig({
             output: {
                 chunkFileNames: 'js/[name].dist.js',
                 entryFileNames: 'js/[name].dist.js',
-                assetFileNames: 'css/libs/[name].dist.css',
+                assetFileNames: ({ name }) => {
+                    if (/^theme-.*\.css$/.test(name ?? '')) {
+                        return 'css/themes/[name].dist[extname]';
+                    }
+                    else if (/\.css$/.test(name ?? '')) {
+                        return 'css/[name].dist[extname]';
+                    }
+                    return '[name].dist[extname]';
+                },
                 manualChunks: (id) => {
 
                     // node modules chunks
@@ -68,14 +76,26 @@ export default defineConfig({
                     // main chuck
                     if (id.includes('main.js')) return 'main';
 
-                    // libs-script chuck
-                    if (id.includes('libs-script.js')) return 'libs-script';
+                    // libs chuck
+                    if (id.includes('libs-script.js') || 
+                        id.includes('libs-style.js')) return 'libs-scrpt';
 
                     // customizer chuck
                     if (id.includes('template-customizer.js')) return 'libs/customizer';
                     if (id.includes('_template-customizer.html')) return 'components/customizer';
                     if (id.includes('config.js')) return 'utils/config';
-                    if (id.includes('customizer.scss')) return 'customizer';
+
+                    // styles
+                    if (id.includes('core.scss')) return 'core';
+                    if (id.includes('core-dark.scss')) return 'core-dark';
+                    if (id.includes('theme-default.scss')) return 'theme-default';
+                    if (id.includes('theme-default-dark.scss')) return 'theme-default-dark';
+                    if (id.includes('theme-semi-dark.scss')) return 'theme-semi-dark';
+                    if (id.includes('theme-semi-dark-dark.scss')) return 'theme-semi-dark-dark';
+                    if (id.includes('theme-bordered.scss')) return 'theme-bordered';
+                    if (id.includes('theme-bordered-dark.scss')) return 'theme-bordered-dark';
+                    if (id.includes('libs.scss') || id.includes('customizer.scss')) return 'libs';
+
 
                     console.info(id);
                     // other script chuck
